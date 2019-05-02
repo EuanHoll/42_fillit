@@ -6,7 +6,7 @@
 #    By: dkroeke <dkroeke@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/04/04 15:51:09 by euan           #+#    #+#                 #
-#    Updated: 2019/05/02 12:18:42 by ehollidg      ########   odam.nl          #
+#    Updated: 2019/05/02 14:30:50 by ehollidg      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ all: $(NAME)
 
 $(NAME):
 	make -C ../libft/ fclean && make -C ../libft/
-	clang -Wall -Werror -Wextra -I ../libft -c $(SRCF) -g
-	clang -o $(NAME) $(OBJ) -I ../libft -L ../libft -lft -g
+	clang -Wall -Werror -Wextra -I ../libft -c $(SRCF)
+	clang -o $(NAME) $(OBJ) -I ../libft -L ../libft -lft
 
 clean:
 	make -C ../libft/ clean

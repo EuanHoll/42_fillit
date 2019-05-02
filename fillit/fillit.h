@@ -6,7 +6,7 @@
 /*   By: dkroeke <dkroeke@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/17 18:42:46 by ehollidg       #+#    #+#                */
-/*   Updated: 2019/05/02 12:24:40 by ehollidg      ########   odam.nl         */
+/*   Updated: 2019/05/02 13:20:23 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct	s_ter
 t_list			**ret_ter(char *str);
 int				ch_in(char **str);
 void			clear_array(char **str, size_t max);
-t_list			**free_ret(t_list **elm, char *ar[4], int i);
+t_list			**free_ret(t_list **elm, char *ar[4], int j);
 char			**ft_create_tdaf(int cw, int cl);
 int				fil_solver(t_list **tet, char **map);
 int				print_fillit(char **map);

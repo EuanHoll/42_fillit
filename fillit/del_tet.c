@@ -6,7 +6,7 @@
 /*   By: ehollidg <ehollidg@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/02 12:16:09 by ehollidg       #+#    #+#                */
-/*   Updated: 2019/05/02 12:20:19 by ehollidg      ########   odam.nl         */
+/*   Updated: 2019/05/02 12:49:41 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void		del_tet(void *tet, size_t size)
 {
-	free(&size);
+	size = 0;
 	free(tet);
 }

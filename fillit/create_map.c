@@ -6,7 +6,7 @@
 /*   By: dkroeke <dkroeke@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/19 10:11:44 by dkroeke        #+#    #+#                */
-/*   Updated: 2019/04/26 17:00:10 by dkroeke       ########   odam.nl         */
+/*   Updated: 2019/05/02 13:04:28 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ char			**ft_create_tdaf(int cw, int cl)
 	{
 		str[j] = ft_strnew(cl);
 		if (!str[j])
+		{
+			clear_array(str, j);
 			return (NULL);
+		}
 		j++;
 	}
 	str = pop_map(str, cw, cl);
