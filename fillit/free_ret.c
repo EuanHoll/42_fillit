@@ -14,17 +14,17 @@
 
 t_list			**free_ret(t_list **elm, char *ar[4], int j)
 {
-	int i;
-
-	i = 0;
-	if (ar)
-		while (i < 4)
-		{
-			free(ar[i]);
-			i++;
-		}
-	ft_lstdel(elm, del_tet);
-	if (j)
-		free(elm);
-	return (NULL);
+    int i;
+    
+    i = 0;
+    if (ar)
+        while (i < 4 && ar[i])
+        {
+            ft_strdel(&ar[i]);
+            i++;
+        }
+    ft_lstdel(elm, del_tet);
+    if (j)
+        free(elm);
+    return (NULL);
 }
