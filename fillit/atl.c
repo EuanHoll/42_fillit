@@ -6,7 +6,7 @@
 /*   By: ehollidg <ehollidg@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/29 17:39:18 by ehollidg       #+#    #+#                */
-/*   Updated: 2019/04/29 17:43:23 by ehollidg      ########   odam.nl         */
+/*   Updated: 2019/05/01 13:10:08 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,49 @@ static t_ter	*assign(char **str)
 	return (ter);
 }
 
+static int		is_beside(t_point a, t_point b)
+{
+	if ((a.x - 1 == b.x && a.y == b.y) || (a.x + 1 == b.x && a.y == b.y)
+	|| (a.y + 1 == b.y && a.x == b.x) || (a.y - 1 == b.y && a.x == b.x))
+		return (1);
+	return (-1);
+}
+
+static int		check_ter(t_point p[4])
+{
+	int i;
+	int k;
+	int j;
+	int l;
+
+	i = 0;
+	l = 0;
+	while (i < 4)
+	{
+		k = 0;
+		j = 0;
+		while (k < 4)
+		{
+			if (i != k && is_beside(p[i], p[k]) == 1)
+				j++;
+			k++;
+		}
+		if (j <= 1)
+			l++;
+		i++;
+	}
+	if (l > 3)
+		return (-1);
+	return (1);
+}
+
 int				atl(char **str, t_list **lst, int num)
 {
 	t_list	*elm;
 	t_ter	*ter;
 
+	if (num > 25)
+		return (-1);
 	elm = ft_lstnew(NULL, 0);
 	if (elm == NULL || lst == NULL)
 		return (-1);
@@ -77,5 +115,7 @@ int				atl(char **str, t_list **lst, int num)
 		*lst = elm;
 	else
 		ft_lstaddend(lst, elm);
+	if (check_ter(ter->point) == -1)
+		return (-1);
 	return (1);
 }

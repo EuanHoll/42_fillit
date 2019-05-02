@@ -6,7 +6,7 @@
 /*   By: dkroeke <dkroeke@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/18 12:30:19 by ehollidg       #+#    #+#                */
-/*   Updated: 2019/04/29 16:51:03 by ehollidg      ########   odam.nl         */
+/*   Updated: 2019/05/01 13:19:24 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ int					ch_in(char **str)
 	i.z = 0;
 	while (i.x < 4)
 	{
-		if (ft_strlen(str[i.x]) != 5)
+		if (ft_strlen(str[i.x]) != 5 || str[i.x][4] != '\n')
 			return (-1);
 		i.y = 0;
 		while (i.y < 4)
 		{
 			if ((str[i.x][i.y] != '.' && str[i.x][i.y] != '#') ||
-				(str[i.x][i.y] == '#' && check_around(str, i) == -1))
+				(str[i.x][i.y] == '#' && check_around(str, i) == 0))
 				return (-1);
 			if (str[i.x][i.y] == '#')
 				i.z++;

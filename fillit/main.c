@@ -6,7 +6,7 @@
 /*   By: dkroeke <dkroeke@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/18 11:39:01 by ehollidg       #+#    #+#                */
-/*   Updated: 2019/04/29 14:58:26 by ehollidg      ########   odam.nl         */
+/*   Updated: 2019/04/30 16:15:37 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,30 +45,26 @@ static int	get_min_cube(int lst)
 static int	make_map(t_list **lst)
 {
 	char	**map;
-	int		i;
+	int		m;
 	int		j;
-	t_point	*k;
+	t_point	k[1];
 
-	i = get_min_cube(ft_lstcnt(*lst));
+	m = get_min_cube(ft_lstcnt(*lst)) + 2;
 	j = 0;
-	k = ft_memalloc(sizeof(t_point));
-	if (k == NULL)
-		return (-1);
 	k->x = 0;
 	k->y = 0;
 	while (j == 0)
 	{
-		map = ft_create_tdaf(i, i);
+		map = ft_create_tdaf(m, m);
 		clear_st(lst);
 		k->z = 0;
-		j = fil_solver(lst, map, *k);
+		j = fil_solver(lst, map);
 		if (j == 0)
 			free(map);
-		i++;
+		m++;
 	}
 	print_fillit(map);
 	free(map);
-	free(k);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ehollidg <ehollidg@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/18 11:43:16 by ehollidg       #+#    #+#                */
-/*   Updated: 2019/04/29 17:52:26 by ehollidg      ########   odam.nl         */
+/*   Updated: 2019/05/02 12:24:46 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static t_list		**get_lst(int fd)
 		i.z = read(fd, &tmp, 1);
 		if ((i.z > 0 && tmp[1] != '\0')
 			|| ch_in(ar) < 0 || atl(ar, lst, i.x) < 0)
-			return (free_ret(lst));
+			return (free_ret(lst, ar, 1));
 		clear_array(ar, 4);
 		i.x++;
 		if (i.z == 0)

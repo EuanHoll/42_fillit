@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_realloc.c                                       :+:    :+:            */
+/*   del_tet.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: dkroeke <dkroeke@student.codam.nl>           +#+                     */
+/*   By: ehollidg <ehollidg@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/04/02 12:13:53 by dkroeke        #+#    #+#                */
-/*   Updated: 2019/04/03 18:46:13 by dkroeke       ########   odam.nl         */
+/*   Created: 2019/05/02 12:16:09 by ehollidg       #+#    #+#                */
+/*   Updated: 2019/05/02 12:20:19 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fillit.h"
 
-void		*ft_realloc(void *ptr, size_t size, size_t increase)
+void		del_tet(void *tet, size_t size)
 {
-	void		*nptr;
-
-	nptr = (void *)malloc(sizeof(void) * (size + increase));
-	ft_memcpy(ptr, nptr, size - increase);
-	free(ptr);
-	return (nptr);
+	free(&size);
+	free(tet);
 }

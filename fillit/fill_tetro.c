@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr_fd.c                                     :+:    :+:            */
+/*   fill_tetro.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: dkroeke <dkroeke@student.codam.nl>           +#+                     */
+/*   By: ehollidg <ehollidg@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/20 16:30:26 by dkroeke        #+#    #+#                */
-/*   Updated: 2019/03/21 14:33:16 by dkroeke       ########   odam.nl         */
+/*   Created: 2019/05/01 13:15:47 by ehollidg       #+#    #+#                */
+/*   Updated: 2019/05/01 13:16:20 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fillit.h"
 
-void		ft_putstr_fd(char const *str, int fd)
+int			fill_tetro(t_list **tet, char **map, t_point p)
 {
-	int i;
+	int		k;
 
-	i = 0;
-	while (str[i])
+	k = 0;
+	while (k < 4)
 	{
-		ft_putchar_fd(str[i], fd);
-		i++;
+		map[PT(k).y + p.y][PT(k).x + p.x] = CONT(tet)->c;
+		k++;
 	}
+	CONT(tet)->st = 1;
+	return (1);
 }

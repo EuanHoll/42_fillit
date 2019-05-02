@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstaddend.c                                     :+:    :+:            */
+/*   remove_tetro.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ehollidg <ehollidg@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/04/18 14:42:24 by ehollidg       #+#    #+#                */
-/*   Updated: 2019/04/18 14:44:42 by ehollidg      ########   odam.nl         */
+/*   Created: 2019/05/01 13:21:37 by ehollidg       #+#    #+#                */
+/*   Updated: 2019/05/01 13:21:55 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fillit.h"
 
-void			ft_lstaddend(t_list **alst, t_list *new)
+int			remove_tetro(t_list **tet, char **map, t_point p)
 {
-	t_list	*blst;
+	char	tmp;
+	int		k;
 
-	blst = *alst;
-	if (new != NULL)
+	k = 0;
+	tmp = CONT(tet)->c;
+	while (k < 4)
 	{
-		while (blst->next)
-			blst = blst->next;
-		blst->next = new;
+		if (map[PT(k).y + p.y][PT(k).x + p.x] == tmp)
+			map[PT(k).y + p.y][PT(k).x + p.x] = '.';
+		k++;
 	}
+	CONT(tet)->st = 0;
+	return (1);
 }
