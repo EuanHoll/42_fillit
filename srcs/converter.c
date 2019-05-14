@@ -6,7 +6,7 @@
 /*   By: ehollidg <ehollidg@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/18 11:43:16 by ehollidg       #+#    #+#                */
-/*   Updated: 2019/05/02 13:38:58 by ehollidg      ########   odam.nl         */
+/*   Updated: 2019/05/11 12:04:23 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int		create_strar(char *ar[4])
 	return (1);
 }
 
-static t_list		**get_lst(int fd)
+static t_list	**get_lst(int fd)
 {
 	t_list	**lst;
 	char	tmp[2];
@@ -59,7 +59,7 @@ static t_list		**get_lst(int fd)
 	return (lst);
 }
 
-t_list				**ret_ter(char *str)
+t_list			**ret_ter(char *str)
 {
 	int			fd;
 	t_list		**lst;

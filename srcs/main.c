@@ -6,7 +6,7 @@
 /*   By: dkroeke <dkroeke@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/18 11:39:01 by ehollidg       #+#    #+#                */
-/*   Updated: 2019/05/02 13:23:28 by ehollidg      ########   odam.nl         */
+/*   Updated: 2019/05/13 17:03:52 by ehollidg      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,9 @@ static int	get_min_cube(int lst)
 static void	clean_up(t_list **lst, char **map, int len)
 {
 	ft_lstdel(lst, del_tet);
-	len--;
-	while (len > -1)
-	{
-		ft_strdel(&map[len]);
-		len--;
-	}
+	free(lst);
+	clear_array(map, len);
+	free(map);
 }
 
 static int	make_map(t_list **lst)
@@ -71,7 +68,10 @@ static int	make_map(t_list **lst)
 		k->z = 0;
 		j = fil_solver(lst, map);
 		if (j == 0)
+		{
 			clear_array(map, m + 1);
+			free(map);
+		}
 		m++;
 	}
 	print_fillit(map);
@@ -98,7 +98,7 @@ int			main(int argc, char **argv)
 	}
 	else
 	{
-		ft_putendl("error");
+		ft_putendl("Usage : Give one file location as an arg");
 	}
 	return (0);
 }

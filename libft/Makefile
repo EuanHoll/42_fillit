@@ -6,7 +6,7 @@
 #    By: dkroeke <dkroeke@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/03/21 14:11:35 by dkroeke        #+#    #+#                 #
-#    Updated: 2019/04/20 11:17:42 by dkroeke       ########   odam.nl          #
+#    Updated: 2019/05/11 12:15:13 by ehollidg      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SOURCE = putchar putstr strcmp strlen swap atoi bzero isalnum isalpha isascii \
 		toupper isspace strncpy strncat strlcat strchr strrchr strnstr strncmp\
 		memcmp memccpy memmove memchr memdel strnew strdel strclr striter     \
 		striteri strmap strmapi strequ strnequ strsub strjoin intlen itoa     \
-		isblank strtrim strsplit lstnew lstdelone lstdel lstadd lstiter lstmap \
+		isblank strtrim strsplit lstnew lstdelone lstdel lstadd lstiter lstmap\
 		strcw strlend create_tda getline lstcnt lstaddend sqrt
 SOURCE := $(SOURCE:%=ft_%.c)
 OBJECTS := $(SOURCE:%.c=%.o)
