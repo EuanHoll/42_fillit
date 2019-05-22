@@ -59,7 +59,6 @@ static int	check2_tetro(t_list **tet)
 			k++;
 		temp = temp->next;
 	}
-	k++;
 	if (k == i)
 		return (1);
 	return (0);
