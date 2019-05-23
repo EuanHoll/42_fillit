@@ -29,7 +29,7 @@ size_t n)
 		p1[i] = p2[i];
 		i++;
 		if (p2[i - 1] == cc)
-			return (&dst[i]);
+			return ((dst + i));
 	}
 	return (NULL);
 }
