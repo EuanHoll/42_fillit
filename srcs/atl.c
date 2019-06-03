@@ -42,7 +42,7 @@ static t_ter	*assign(char **str)
 	fnd.x = 0;
 	fnd.y = 0;
 	stpnt.z = 0;
-	while (str[fnd.y][fnd.x])
+	while (fnd.z < 4)
 	{
 		fnd.y = 0;
 		while (fnd.y < 4 && str[fnd.y][fnd.x])

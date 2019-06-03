@@ -25,7 +25,7 @@ $(NAME): $(SRCF)
 
 clean:
 	make -C libft/ clean
-	rm -f $(OBJ) fillit.gch
+	rm -f $(OBJ)
 
 fclean: clean
 	make -C libft/ fclean
